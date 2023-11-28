@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.118.2">
+    <title>Blog Frog</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./blog.css">
+
+  <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet">
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="aperture" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10"/>
+    <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/>
+  </symbol>
+  <symbol id="cart" viewBox="0 0 16 16">
+    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+  </symbol>
+  <symbol id="chevron-right" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+  </symbol>
+</svg>
+
+<div class="container">
+  <header class="border-bottom lh-1 py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+        <a class="link-secondary" href="#">Subscribe</a>
+      </div>
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-body-emphasis text-decoration-none" href="./index.html" >Frog</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <a class="link-secondary" href="#" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+        </a>
+        <a class="btn btn-sm btn-outline-secondary" href="#">Cadastre-se</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-scroller py-1 mb-3 border-bottom">
+    <nav class="nav nav-underline justify-content-between">
+      <a class="nav-item nav-link link-body-emphasis active" href="./index.html">Inicio</a>
+      <a class="nav-item nav-link link-body-emphasis" href="./esportes.html">Esporte</a>
+      <a class="nav-item nav-link link-body-emphasis" href="./mundo.html">Mundo</a>
+      <a class="nav-item nav-link link-body-emphasis" href="./filme.html">Filme</a>
+      <a class="nav-item nav-link link-body-emphasis" href="./musica.html">Musica</a>
+    
+      </nav>
+  </div>
+</div>
+
+<main class="container">
+  <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+    <div class="col-lg-6 px-0">
+      <h1 class="display-4 fst-italic">Angela Davis</h1>
+      <p>A filósofa e ativista Angela Yvonne Davis, conhecida por sua luta anticapitalista, antirracista e feminista, nasceu em 26 de janeiro de 1944 na cidade de Birmingham, Alabama, região Sul dos Estados Unidos.</p>
+    </div>
+  </div>
+
+  <img src="./imgm/angela.jpg" alt="">
+
+  <div class="row g-5">
+    <div class="col-md-8">
+      <h7>
+        Angela Davis fala de resistência e caminhos para a luta em evento na Reitoria da UFBA
+      </h7> <br><br>
+
+
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">Vida de Davis</h2>
+        <p class="blog-post-meta">19 Agosto, 2022 by</p>
+
+        <h6>Vida de Davis</h6>
+        <hr>
+        <p>Filha mais velha de Sally e Frank Davis, Angela Davis cresceu em uma família politicamente ativa durante o período de vigência das leis de segregação Jim Crow. Seus pais eram professores, participavam de movimentos antirracistas como a NAACP (Associação Nacional para o Progresso de Pessoas de Cor) e tinham como amigos próximos integrantes do Partido Comunista. Portanto, não foi inesperado o seu envolvimento na luta pelos direitos civis, uma vez que essa consciência política foi desenvolvida desde a sua infância.</p>
+        <p>Angela Davis teve uma carreira educacional muito promissora e com episódios que a marcaram por toda a vida, a começar pela sua vivência na escola segregada Carrie A. Tuggle Elementary School. A experiência de convívio somente com crianças negras tornou possível a construção de uma identidade negra mesmo em um local com uma estrutura tão precária (Cf. Davis, 2019, p.102). Aos 15 anos, Davis foi para Nova York estudar na Elisabeth Irwin High School pelo programa American Friends Service Committee (Comitê de Assistência dos Amigos Estadunidenses; AFSC, na sigla original), onde aprendeu sobre socialismo nas aulas de história (Cf. Davis, 2019, p. 117-8). No socialismo ela identificou uma possibilidade concreta de resolver os problemas enfrentados pelo povo negro. A partir de então, e por conta própria, Davis buscou entender melhor este movimento nos livros aos quais tinha acesso e através da participação em uma organização marxista-leninista para jovens chamada Advance (Progresso) irmã do Partido Comunista. </p>
+        <h3>Formação</h3>
+        <p>Em 1961, Davis ingressa na Universidade de Brandeis, Massachusetts, para estudar Literatura Francesa. Nessa época, ela já se declarava comunista, embora ainda não estivesse envolvida em nenhum movimento oficial, pois, nas suas palavras, “tornar-se comunista é assumir um compromisso vitalício que exige muita reflexão séria a respeito de se possuir o conhecimento, a força, a perseverança e a disciplina que uma pessoa comunista precisa ter” (Davis, 2019a, p.165). Durante a graduação, ela consegue uma bolsa de estudos de um ano pelo programa Hamilton College e vai estudar na Sorbonne, em Paris. Lá, ela se interessa por textos existencialistas de Sartre e pela fenomenologia de Merleau-Ponty. </p>
+        <p>Sua formação e o contato inicial com o marxismo na juventude pavimentou esse caminho de união entre teoria e prática, entre vida acadêmica e ativismo. Isso porque, de um lado, ela relaciona o marxismo à corrente de pensamento na qual esteve inserida desde a sua primeira formação. De outro, vê nele uma possibilidade de unir a classe trabalhadora multirracial para servir como agente histórico da mudança social. Trazendo as experiências do povo negro para o centro de debate sobre o capitalismo – atenta, portanto, às opressões de classe e de raça – Davis reformula as suas primeiras questões filosóficas. Para ela, se um conceito não corresponde à realidade, deve ser reformulado. Para pensar as questões do presente, ela combina reflexões produzidas no âmbito da filosofia alemã e da teoria crítica – por filósofos como Kant, Hegel, Marx, Marcuse, Adorno e Oscar Negt – com reflexões produzidas pelos grandes (porém esquecidos) teóricos da História e Literatura Tradicional Negra – James Baldwin, Frederick Douglass e W. E. B. Du Bois. Esta habilidade de pensar a partir da experiência comum do povo negro é uma estratégia comum usada por teóricas negras, que se mostra muito potente para ampliar o debate e trazer novas dimensões às questões tradicionais da filosofia. Com essa estratégia torna-se possível repensar questões que eram consideradas como universais, mas que na verdade não incluíam a perspectiva do povo negro. Sendo assim, liberdade, libertação e identidade, conceitos tradicionais da filosofia, tornam-se também conceitos chaves em sua literatura.</p>
+      
+        <h2>Obras</h2>
+        <p>As obras de Angela Davis têm sido interpretadas à luz de alguns de seus grandes temas: os escritos sobre as prisões, os estudos sobre as relações entre sexismo, racismo e capitalismo e os estudos e análises sobre a cultura. Sua vasta produção intelectual é constituída por livros, artigos, capítulos de livros, falas públicas em universidades, em eventos e em organizações políticas.</p>
+        <p>Nesse sentido, Lectures on Liberation [Discursos sobre Libertação], constituem um importante documento para o entendimento da obra da autora: são anotações das duas primeiras aulas ministradas por Davis no outono de 1969, na UCLA, sob o título “Recurring Philosophical Themes in Black Literature” [Temas Filosóficos Recorrentes na Literatura Negra]. A autora aborda o caráter complexo da escravização e da busca por liberdade, o formalismo das democracias modernas e a necessidade de desatrelarmos valores democráticos de valores burgueses, trazendo à luz abolicionistas notórios na história dos Estados Unidos, como Frederick Douglass, o sociólogo W. E. B. Du Bois, assim como importantes mulheres ativistas como Harriet Tubman e Sojourner Truth.</p>
+        <p>If They Come in the Morning…Voices of Resistance [Se Eles Vierem pela Manhã…Vozes de Resistência] é o primeiro livro publicado pela autora, em 1971. Trata-se de uma coletânea preparada para publicação por ela e por membros do Comitê Nacional para a Libertação de Angela Davis e Todos os Presos Políticos. A obra aborda as políticas de libertação do período, a função social das prisões nos Estados Unidos, as políticas prisionais, seu caráter racista e as dimensões que estas assumem quando conectados à questão de gênero. Constituído de cartas, ensaios e artigos, o livro dialoga com as formulações teóricas e práticas políticas dos movimentos negros estadunidenses do período. Denuncia a arbitrariedade de sua própria perseguição e aprisionamento, da prisão de outros inúmeros ativistas políticos do período e é pioneiro na denúncia do sistema prisional “como um apêndice do estado capitalista e um instrumento para opressão racial e de classe” (Davis, 1971, Prefácio, tradução nossa).</p>
+        
+        <h2>Principais atribuições</h2>
+        <p>Ainda que sejam muitos os temas abordados em sua obra, consideramos que o feminismo antirracista e anticapitalista possui centralidade em sua produção intelectual, desde a abordagem das opressões interconectadas vivenciadas pelas mulheres negras escravizadas em seu primeiro artigo Reflections on the Black Woman’s Role in the Community of Slaves [Reflexões sobre o Papel da Mulher Negra na Comunidade de Pessoas Escravizadas], até o último livro mencionado, A Liberdade é uma Luta Constante. Na abordagem dessa temática está uma das mais relevantes contribuições da autora, que, ao conectar a categoria gênero à raça e classe em uma análise descritiva e prescritiva, visa à transformação social. Estão dentre as principais contribuições: 1) a reelaboração da história dos movimentos feministas estadunidenses, indicando uma longa genealogia de contribuições políticas e intelectuais de mulheres negras; 2) a afirmação da importância das conexões entre movimentos sociais, da atenção às questões de gênero nos movimentos negros e da temática racial nos movimentos feministas.</p>
+        <p>Para Angela Davis, o que tem ocorrido é um “nivelamento do discurso político” que toma como evidentes termos como “democracia” e “liberdade”, e esse entendimento tem possibilitado a agressão e a injúria (DAVIS, 2019b, p. 85). Davis anuncia essa crítica em seu primeiro livro publicado If They Come in the Morning, no qual afirma haver uma incongruência entre democracia e capitalismo, já que “a despeito de toda a retórica em contrário, o povo não é matriz última das leis que o governam, e menos ainda as pessoas negras e nacionalmente oprimidas” (2016a, p. 27). Nesse sentido, a noção de democracia também é objeto de crítica constante, intimamente relacionada ao questionamento da noção de liberdade. Para Davis, ambos os conceitos – democracia e liberdade – têm sido interpretados à luz da ideologia burguesa: a liberdade mormente associada à propriedade, e a democracia como mecanismo político que reforça as opressões. Daí a sua insistência na urgência da construção de noções de democracia que sejam efetivamente pautadas na justiça e na igualdade econômica, racial, de gênero e de sexo, algo que só conquistaremos a partir da luta coletiva e da constituição de alianças entre causas progressistas. Trabalho que ela tem realizado ao longo de toda a sua vida, ao conciliar reflexão filosófica e ativismo político. </p>
+        <h3>Bibliografia</h3>
+        <p>Texto retirado da <a href="https://www.blogs.unicamp.br/mulheresnafilosofia/angela-davis/">Enciclopédia mulheres na filosofia.</a> <br> <br> Por Thais Rodrigues – Doutoranda no Programa de Pós-Graduação em Filosofia da Universidade Federal de São Paulo, docente no Instituto Federal de Goiás e integrante do Grupo FiloPol – UNIFESP/CNPq e Diversas IFG/CNPq – Lattes</p>
+        <p>E por Laíssa Ferreira – Doutoranda no Programa de Pós-Graduação em Filosofia da Universidade Estadual de Campinas (Unicamp) e integrante do Grupo de Pesquisa em Filosofia Política – CNPq – Lattes</p>
+      </article>
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-body-tertiary rounded">
+          <h4 class="fst-italic">Um pouquinho sobre nós</h4>
+          <p class="mb-0">Criado no ano de 2023, a Frog é um blog exclusivo para notícias sobre a nossa comunidade LGBTQIA+. Aqui vocês encontram também muita cultura e arte, não pode faltar as atualizações sobre nossas lutas.</p>
+        </div>
+
+        <div>
+          <h4 class="fst-italic">Últimas notÍcias</h4>
+          <ul class="list-unstyled">
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="./politica.html">
+                <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"> <img src="./imgm/ErikaHilton-Deputada.webp" width="50%" height="50%" alt="Erika Hilton"> </svg>
+                <div class="col-lg-8">
+                  <h6 class="mb-0">Erika Hilton explica o verdadeiro significado de pluralidade na comunidade LGBTQIA+</h6>
+                  <small class="text-body-secondary">24 Novembro, 2023</small>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="./musica.html">
+                <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <img src="./imgm/biaferreira.jpg" width="50%" height="66%"alt="Bia Ferreira">
+                </svg>
+                <div class="col-lg-8">
+                  <h6 class="mb-0">Bia Ferreira retorna ao Brasil após temporada de turnê apoteótica no exterior!</h6>
+                  <small class="text-body-secondary">22 Novembro, 2023</small>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="./musica.html">
+                <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><img src="./imgm/Ludmila (1).jpg" width="50%" height="100%" alt=""></svg>
+                <div class="col-lg-8">
+                  <h6 class="mb-0">Ludmilla expõe momento em que Thiago Gagliasso foi racista! </h6>
+                  <small class="text-body-secondary">24 Novembro, 2023</small>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-4">
+          <h4 class="fst-italic">Segue lá</h4>
+          <ol class="list-unstyled">
+            <li><a href="https://github.com/RayaneSR">GitHub</a></li>
+            <li><a href="https://twitter.com/RaySuperay">Twitter</a></li>
+            <li><a href="https://www.instagram.com/_superray/">Instagram</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="py-5 text-center text-body-secondary bg-body-tertiary">
+  <p>Blog criado por <a href="https://twitter.com/RaySuperay">@RaySuperay</a>.</p>
+  <p class="mb-0">
+    <a href="#">Voltar para o topo</a>
+  </p>
+</footer>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+</html>
+
